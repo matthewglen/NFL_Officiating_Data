@@ -15,11 +15,23 @@ getOfficials <- function(gameID) {
   url <- gsub(" ", "", paste("https://www.pro-football-reference.com/boxscores/",gameID,".htm"))
   url %>% read_html() %>% html_nodes(xpath = '//comment()') %>%    # select comments
     html_text() %>%    # extract comment text
-    paste(collapse = '') %>%    # collapse to single string
-    read_html() %>%    # reread as HTML
+    paste(collapse = '') %>%  # collapse to single string
+    read_html() %>%  # reread as HTML
     html_node('table#officials') %>%    # select desired node
-    html_table() 
+    html_table(1)
 }
+
+getPositions <-function(gameID) {
+  newLine <- ""
+  for (i in 1:7) {
+    official <- as.data.frame(getOfficials(gameID))[i,2]
+    newLine <- paste(newLine,official,",", sep = "")
+  }
+  newLine <- str_sub(newLine,1,nchar(newLine)-1)
+  print(newLine)
+}
+
+getPositions("200709060clt")
 
 # Get game data ####
 # Lee Sharp's games file
@@ -76,5 +88,3 @@ pffIDs <- pffIDs %>%
 
 # Check pffIDs
 pffIDs %>% head(5)
-
-getOfficials("200709060clt")
