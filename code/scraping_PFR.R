@@ -101,6 +101,21 @@ pffIDs <- pffIDs %>%
     pff_full_ID = gsub(" ", "", paste(pffID_num,pffID_ch))
   )
 
+# In some instances, PFR has the wrong team listed at home. A check of wikipedia
+# for each error show's Lee's 'games' data is correct. Not sure why PFR has it 
+# like this, but a quick edit of the data sorts it all out.
+# Line 1044 - OAK/TB SB in '03. Need to change from 200301260tam to 200301260rai
+pffIDs[1044,7]="200301260rai"
+# Line 1311 - CAR/PAT  in '04. Need to change from 200402010nwe to 200402010car
+pffIDs[1311,7]="200402010car"
+# Line 1578 - PAT/PHI in '05. Need to change from 200502060phi to 200502060nwe
+pffIDs[1578,7]="200502060nwe"
+# Line 3180 - PIT/GB in '11. Need to change from 201102060gnb to 201102060pit
+pffIDs[3180,7]="201102060pit"
+# Line 4156 - NYJ/BUF in '14. Need to change from 201411230buf to 201411240buf
+# Not sure why there's a date difference here
+pffIDs[4156,7]="201411240buf"
+
 # Check pffIDs
 pffIDs %>% head(5)
 pffIDs %>% tail(5)
@@ -110,21 +125,12 @@ pffIDs %>% tail(5)
 nrow(pffIDs)
 
 # For each row in the file...
-for (c in 1579:nrow(pffIDs)) {
+for (c in 1:nrow(pffIDs)) {
   #...call the getPositions function. Passing the game_id and pfr_full_id
   # of the given row
   getPositions(pffIDs[c,1], pffIDs[c,7])
 }
 
 # Check a specific row if there's a 404 error
-pffIDs [1578,]
-# Sometimes, usually for the super bowl games, PFR has the wrong team listed at
-# home. A check of wikipedia for each error show's Lee's 'games' data is 
-# correct. Not sure why PFR has it like this, but a quick edit of the data
-# sorts it all out.
-# Line 1044 - OAK/TB SB in '03. Need to change from 200301260tam to 200301260rai
-pffIDs[1044,7]="200301260rai"
-# Line 1311 - CAR/PAT in '04. Need to change from 200402010nwe to 200402010car
-pffIDs[1311,7]="200402010car"
-# Line 1578 - PAT/PHI in '05. Need to change from 200502060phi to 200502060nwe
-pffIDs[1578,7]="200502060nwe"
+# The next row of the csv to be input
+pffIDs [4156,]
