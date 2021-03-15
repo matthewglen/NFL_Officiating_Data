@@ -1,0 +1,59 @@
+The nflfastR 2019 data contains 48 unique penalty types. Underneath each one,
+are the positions flagged committing that penalty type in 2019.
+
+ 1 Offensive Holding
+ OT, TE, OLB, OG, C, NT, RB, WR, DB, LB, DT, LS, CB, DE, FB, SS, FS, MLB
+ 2 Neutral Zone Infraction
+ OLB, DE, NT, DT, LB, DB, CB, MLB, SS, WR, RB
+ 3 Illegal Block Above the Waist
+ OT, WR, OLB, SS, TE, OG, DE, LB, RB, DB, FB, CB, C, FS
+ 4 Defensive Offside
+ OT, WR, OLB, SS, TE, OG, DE, LB, L RB, DB, FB, CB, C, FS
+ 5 Defensive Pass Interference
+ CB, DB, OLB, LB, FS, SS, MLB, ILB, SAF
+ 6 Defensive Holding
+ CB, NT, FS, DT, DB, DE, OLB, MLB, ILB, SS, LB, SAF
+ 7 Lowering the Head to Initiate Contact
+ 8 Delay of Game
+ 9 Kick Catch Interference
+10 False Start
+11 Illegal Use of Hands
+12 Illegal Touch Kick
+13 Roughing the Passer
+14 Illegal Motion
+15 Illegal Formation
+16 NA
+17 Taunting
+18 Ineligible Downfield Pass
+19 Offensive Pass Interference
+20 Running Into the Kicker
+21 Unnecessary Roughness
+22 Illegal Contact
+23 Player Out of Bounds on Kick
+24 Illegal Blindside Block
+25 Illegal Substitution
+26 Invalid Fair Catch Signal
+27 Roughing the Kicker
+28 Offside on Free Kick
+29 Intentional Grounding
+30 Tripping
+31 Illegal Shift
+32 Fair Catch Interference
+33 Disqualification
+34 Unsportsmanlike Conduct
+35 Chop Block
+36 Defensive Too Many Men on Field
+37 Horse Collar Tackle
+38 Offensive Too Many Men on Field
+39 Encroachment
+40 Illegal Forward Pass
+41 Defensive Delay of Game
+42 Clipping
+43 Illegal Bat
+44 Delay of Kickoff
+45 Illegal Crackback
+46 Ineligible Downfield Kick
+47 Low Block
+48 Leverage
+
+Each of these needs to be assigned
