@@ -1,59 +1,407 @@
-The nflfastR 2019 data contains 48 unique penalty types. Underneath each one,
-are the positions flagged committing that penalty type in 2019.
+The nflfastR 2019 data contains 48 unique penalty types. Here, I've displayed
+each one and the positions that were flagged for this penalty at some point in
+2019. I'll then write which referee gave the penalty according to the NFL's
+definition of officiating responsibilities. For more own understand, and perhaps
+useful to others, I have written definitions and reasoning where necessary.
+https://operations.nfl.com/officiating/the-officials/officials-responsibilities-positions/
 
- 1 Offensive Holding
- OT, TE, OLB, OG, C, NT, RB, WR, DB, LB, DT, LS, CB, DE, FB, SS, FS, MLB
- 2 Neutral Zone Infraction
- OLB, DE, NT, DT, LB, DB, CB, MLB, SS, WR, RB
- 3 Illegal Block Above the Waist
- OT, WR, OLB, SS, TE, OG, DE, LB, RB, DB, FB, CB, C, FS
- 4 Defensive Offside
- OT, WR, OLB, SS, TE, OG, DE, LB, L RB, DB, FB, CB, C, FS
- 5 Defensive Pass Interference
- CB, DB, OLB, LB, FS, SS, MLB, ILB, SAF
- 6 Defensive Holding
- CB, NT, FS, DT, DB, DE, OLB, MLB, ILB, SS, LB, SAF
- 7 Lowering the Head to Initiate Contact
- 8 Delay of Game
- 9 Kick Catch Interference
-10 False Start
-11 Illegal Use of Hands
-12 Illegal Touch Kick
-13 Roughing the Passer
-14 Illegal Motion
-15 Illegal Formation
-16 NA
-17 Taunting
-18 Ineligible Downfield Pass
-19 Offensive Pass Interference
-20 Running Into the Kicker
-21 Unnecessary Roughness
-22 Illegal Contact
-23 Player Out of Bounds on Kick
-24 Illegal Blindside Block
-25 Illegal Substitution
-26 Invalid Fair Catch Signal
-27 Roughing the Kicker
-28 Offside on Free Kick
-29 Intentional Grounding
-30 Tripping
-31 Illegal Shift
-32 Fair Catch Interference
-33 Disqualification
-34 Unsportsmanlike Conduct
-35 Chop Block
-36 Defensive Too Many Men on Field
-37 Horse Collar Tackle
-38 Offensive Too Many Men on Field
-39 Encroachment
-40 Illegal Forward Pass
-41 Defensive Delay of Game
-42 Clipping
-43 Illegal Bat
-44 Delay of Kickoff
-45 Illegal Crackback
-46 Ineligible Downfield Kick
-47 Low Block
-48 Leverage
+- Intentional Grounding
+  - A passer throws a forward pass without a realistic chance of completion.
+  - Often thrown to an area of the field with no eligible receiver.
+  - Offending positions 2019:
+    - QB
+    - P (Special teams)
+  - Official:
+    - Referee (R)
 
-Each of these needs to be assigned
+- Defensive Offside
+  -  When a defensive player is on the offense's side of the ball when the ball
+  is snapped.
+  - Or in the “neutral zone”, as defined as the length of the football.
+  - Offending positions 2019:
+    - OLB
+    - DE
+    - NT
+    - DT
+    - LB
+    - ILB
+    - SS
+    - FS
+    - MLB
+    - CB
+  - Official:
+    - Line Judge (LJ)
+    - Down Judge (DJ) / Head Linesman (HL)
+    - Depends on position on the pitch
+
+- Neutral Zone Infraction
+  - A neutral zone infraction penalty is when a defender crosses the LOS and
+  causes an offensive player to move to defend themselves, even if no contact is
+  made.
+  - Offending positions 2019:
+    - OLB
+    - DE
+    - NT
+    - DT
+    - LB
+    - CB
+    - MLB
+  - Official:
+    - Line Judge (LJ)
+    - Down Judge (DJ) / Head Linesman (HL)
+    - Depends on position on the pitch
+
+- False Start
+  - When an offensive player who has assumed a set position charges or moves in
+  such a way as to simulate the start of a play, or if an offensive player who
+  is in motion makes a sudden movement toward the line of scrimmage.
+  - Offending positions 2019:
+    - NA
+    - Umpire
+      - C
+      - LG
+      - RG
+      - OG
+    - Referee
+      - QB
+      - RB
+      - FB
+    - Line Judge or Down Judge:
+      - OT
+      - TE
+      - WR
+  - Official:
+    - Umpire (U)
+    - Referee (R)
+    - Line Judge (LJ)
+    - Down Judge (DJ) / Head Linesman (HL)
+    - Depends on position on the pitch
+
+- Illegal Block Above the Waist
+  - An illegal block (in the back) penalty is called when a player makes contact
+   with an opposing player, who does not have the ball, above the waist
+   (from behind).
+   - Offending positions 2019:
+    - OT
+    - WR
+    - TE
+    - OG
+    - DE
+    - RB
+    - FB
+    - C
+    - LB
+    - FS
+  - Official:
+    - Could be any?
+    - Depends on position on the pitch
+
+- Ineligible Downfield Pass
+  - Also known as an ineligible receiver downfield, or an ineligible man
+  downfield, is a penalty called against the offensive team when a forward pass
+  is thrown while a player, who is ineligible to receive a pass, is beyond the
+  line of scrimmage without blocking an opponent at the time of the pass.
+  - Offending positions 2019:
+    - OT
+    - C
+    - OG
+    - TE
+  - Official:
+    - Referee (R)
+    - Umpire (R)
+
+- Offensive Holding
+  - The illegal restraining of another player by an offensive player on a
+  defensive player.
+  - Offending positions 2019:
+    - TE
+    - RB
+    - WR
+    - FB
+    - CB
+    - OG
+    - OT
+    - C
+    - RG
+    - RT
+  - Official:
+    - Referee (R)
+    - All of them?
+
+- Offensive Pass Interference
+  - When a receiving player makes contact with a defender, not allowing them to
+  fairly defend the incoming pass.
+  - Offending positions 2019:
+    - TE
+    - RB
+    - WR
+    - FB
+  - Official:
+    - Could be any?
+    - Depends on position on the pitch
+
+- Horse Collar Tackle
+  - Maneuver in which a defender tackles another player by grabbing the back
+  collar or the back-inside of an opponent's shoulder pads and pulling the ball
+  carrier directly downward.
+  - Offending positions 2019:
+    - OLB
+    - SS
+    - DB
+    - LB
+    - CB
+    - DE
+    - DT
+  - Official:
+    - Could be any?
+    - Depends on position on the pitch
+
+- Unnecessary Roughness
+  - An illegal action where a player uses unnecessary methods to tackle or block
+  another player.
+  - Offending positions 2019:
+    - OLB
+    - OG
+    - CB
+    - FS
+    - WR
+    - DE
+    - SS
+    - C
+    - DB
+    - DT
+    - ILB
+    - LB
+    - NT
+    - TE
+    - MLB
+    - OT
+    - RB
+    - QB
+    - SAF
+  - Official:
+    - Could be any?
+    - Depends on position on the pitch
+
+- Illegal Contact
+  - When a defensive player interfering with an offensive receiving player more
+  than 5 yards from the line of scrimmage.
+  - Also referred to as illegal touching.
+  - Offending positions 2019:
+    - OLB
+    - FS
+    - CB
+    - DB
+    - LB
+    - ILB
+    - SS
+    - SAF
+  - Official:
+    - Could be any?
+    - Depends on position on the pitch
+
+- Chop Block
+  - An attempt by an offensive player to cut block a defensive player while the
+  defender is already engaged
+  - Offending positions 2019:
+      - OG
+      - RB
+      - OT
+      - TE
+  Illegal Use of Hands,CB
+  Illegal Use of Hands,OT
+  Illegal Use of Hands,SS
+  Illegal Use of Hands,DE
+  Illegal Use of Hands,NT
+  Illegal Use of Hands,DT
+  Illegal Use of Hands,OLB
+  Illegal Use of Hands,LB
+  Illegal Use of Hands,OG
+  Illegal Use of Hands,ILB
+  Illegal Use of Hands,C
+  Illegal Use of Hands,MLB
+  Illegal Use of Hands,DB
+  Illegal Use of Hands,FS
+  Defensive Holding,CB
+  Defensive Holding,NT
+  Defensive Holding,FS
+  Defensive Holding,DT
+  Defensive Holding,DB
+  Defensive Holding,DE
+  Defensive Holding,OLB
+  Defensive Holding,MLB
+  Defensive Holding,ILB
+  Defensive Holding,SS
+  Defensive Holding,LB
+  Defensive Holding,SAF
+  Defensive Pass Interference,CB
+  Defensive Pass Interference,DB
+  Defensive Pass Interference,OLB
+  Defensive Pass Interference,LB
+  Defensive Pass Interference,FS
+  Defensive Pass Interference,SS
+  Defensive Pass Interference,MLB
+  Defensive Pass Interference,ILB
+  Defensive Pass Interference,SAF
+  Illegal Blindside Block,OT
+  Illegal Blindside Block,LB
+  Illegal Blindside Block,SS
+  Illegal Blindside Block,WR
+  Illegal Blindside Block,DE
+  Illegal Blindside Block,C
+  Illegal Blindside Block,DB
+  Illegal Blindside Block,RB
+  Illegal Blindside Block,TE
+  Illegal Forward Pass,QB
+  Illegal Forward Pass,MLB
+  Lowering the Head to Initiate Contact,DE
+  Lowering the Head to Initiate Contact,SS
+  Lowering the Head to Initiate Contact,FS
+  Lowering the Head to Initiate Contact,CB
+  Lowering the Head to Initiate Contact,DB
+  Lowering the Head to Initiate Contact,ILB
+  Lowering the Head to Initiate Contact,DT
+  Lowering the Head to Initiate Contact,MLB
+  Lowering the Head to Initiate Contact,LB
+  Lowering the Head to Initiate Contact,SAF
+  Roughing the Passer,DE
+  Roughing the Passer,SS
+  Roughing the Passer,OLB
+  Roughing the Passer,DT
+  Roughing the Passer,FS
+  Roughing the Passer,LB
+  Roughing the Passer,MLB
+  Roughing the Passer,NT
+  Roughing the Passer,DB
+  Roughing the Passer,CB
+  Roughing the Passer,ILB
+  Encroachment,DE
+  Encroachment,NT
+  Encroachment,DT
+  Encroachment,OLB
+  Encroachment,LB
+  Encroachment,SS
+  Clipping,C
+  Unsportsmanlike Conduct,SS
+  Unsportsmanlike Conduct,DT
+  Unsportsmanlike Conduct,C
+  Unsportsmanlike Conduct,CB
+  Unsportsmanlike Conduct,WR
+  Unsportsmanlike Conduct,DE
+  Unsportsmanlike Conduct,DB
+  Unsportsmanlike Conduct,NA
+  Tripping,OT
+  Tripping,C
+  Tripping,OG
+  Tripping,DE
+  Defensive Delay of Game,DT
+  Defensive Delay of Game,CB
+  Illegal Shift,TE
+  Illegal Shift,RB
+  Illegal Shift,WR
+  Illegal Shift,FB
+  Illegal Shift,NA
+  Disqualification,OLB
+  Disqualification,OT
+  Disqualification,MLB
+  Disqualification,FS
+  Disqualification,DT
+  Disqualification,CB
+  Disqualification,LB
+  Low Block,FB
+  Illegal Formation,WR
+  Illegal Formation,OT
+  Illegal Formation,RB
+  Illegal Formation,TE
+  Illegal Formation,NA
+  Taunting,RB
+  Taunting,CB
+  Taunting,WR
+  Taunting,OG
+  Taunting,FS
+  Taunting,LB
+  Illegal Motion,WR
+  Illegal Motion,QB
+  Illegal Crackback,TE
+  Illegal Bat,QB
+  Delay of Game,NA
+  Offensive Too Many Men on Field,NA
+  Defensive Too Many Men on Field,NA
+  Illegal Substitution,NA
+
+  Special:
+  Illegal Block Above the Waist,OLB
+  Illegal Block Above the Waist,LB
+  Illegal Block Above the Waist,TE
+  Illegal Block Above the Waist,RB
+  Illegal Block Above the Waist,DB
+  Illegal Block Above the Waist,CB
+  Illegal Block Above the Waist,WR
+  Illegal Block Above the Waist,FS
+  Illegal Block Above the Waist,SS
+  Illegal Block Above the Waist,FB
+  Illegal Block Above the Waist,DE
+  Offensive Holding,OLB
+  Offensive Holding,NT
+  Offensive Holding,DB
+  Offensive Holding,LB
+  Offensive Holding,DT
+  Offensive Holding,RB
+  Offensive Holding,LS
+  Offensive Holding,CB
+  Offensive Holding,DE
+  Offensive Holding,FB
+  Offensive Holding,TE
+  Offensive Holding,SS
+  Offensive Holding,WR
+  Offensive Holding,FS
+  Offensive Holding,MLB
+  Unsportsmanlike Conduct,WR
+  Unsportsmanlike Conduct,LB
+  Unsportsmanlike Conduct,DB
+  Unsportsmanlike Conduct,RB
+  Unsportsmanlike Conduct,NA
+  NA,NA
+  NA,
+  Unnecessary Roughness,DB
+  Unnecessary Roughness,DE
+  Unnecessary Roughness,ILB
+  Unnecessary Roughness,WR
+  Unnecessary Roughness,FS
+  Unnecessary Roughness,LB
+  Unnecessary Roughness,TE
+  Unnecessary Roughness,OLB
+  Unnecessary Roughness,CB
+  Unnecessary Roughness,RB
+  Unnecessary Roughness,P
+  Chop Block,SS
+  Chop Block,RB
+  Illegal Bat,RB
+  Illegal Blindside Block,DB
+  Illegal Blindside Block,WR
+  Illegal Blindside Block,RB
+  Illegal Blindside Block,LB
+  Kick Catch Interference,WR
+  Kick Catch Interference,RB
+  Kick Catch Interference,CB
+  Kick Catch Interference,DB
+  Illegal Shift,WR
+  Illegal Shift,NA
+  Disqualification,CB
+  Lowering the Head to Initiate Contact,CB
+  Lowering the Head to Initiate Contact,P
+  Fair Catch Interference,DB
+  Fair Catch Interference,WR
+  Fair Catch Interference,FS
+  Illegal Touch Kick,CB
+  Illegal Touch Kick,WR
+  Illegal Touch Kick,DB
+  Ineligible Downfield Kick,LB
+  Offside on Free Kick,WR
+  Illegal Motion,DE
+  Player Out of Bounds on Kick,DB
+  Player Out of Bounds on Kick,WR
+  Player Out of Bounds on Kick,CB
+  Invalid Fair Catch Signal,WR
+  Illegal Formation,CB
+  Illegal Formation,NA
